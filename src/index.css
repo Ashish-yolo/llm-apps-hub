@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 text-slate-900;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-medium px-6 py-3 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply bg-white/80 hover:bg-white text-slate-700 hover:text-slate-900 border border-slate-200 hover:border-slate-300 font-medium px-6 py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg backdrop-blur-sm;
+  }
+}
