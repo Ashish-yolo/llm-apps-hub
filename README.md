@@ -1,69 +1,93 @@
-# React + TypeScript + Vite
+# 🏠 LLM Apps Hub - AI Real Estate Agent Team
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Find your perfect home in minutes with 3 AI agents working together 🤯
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**3 AI Agents Working Together:**
+- 🔍 **Property Search Agent** - Scrapes listings from Zillow, Realtor.com, and Trulia
+- 📊 **Market Analysis Agent** - Analyzes market trends and neighborhood insights  
+- 💰 **Property Valuation Agent** - Evaluates fair market value and investment potential
 
-## Expanding the ESLint configuration
+**What Makes It Special:**
+- ⚡ Results in **minutes, not hours**
+- 🎯 Spots **undervalued listings**
+- 📈 Identifies **emerging market trends** 
+- 🧮 Calculates **precise investment returns**
+- 🤝 **Seamless agent collaboration**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Tech Stack
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Frontend:** React 18 + TypeScript + Vite
+- **Styling:** Tailwind CSS with glass-morphism design
+- **AI Models:** OpenAI GPT-OSS
+- **Web Scraping:** Firecrawl
+- **Agent Framework:** Agno
+- **UI Components:** Lucide React icons
+- **Deployment:** Netlify
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🏃‍♂️ Quick Start
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Ashish-yolo/llm-apps-hub.git
+   cd llm-apps-hub
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+## 📖 About
+
+This application showcases an innovative approach to real estate search using multi-agent AI systems. Instead of manually browsing through countless listings, our 3 AI agents work together to:
+
+1. **Search** multiple platforms simultaneously
+2. **Analyze** market conditions and trends  
+3. **Evaluate** investment potential and fair pricing
+
+The result? You get comprehensive property insights in minutes that would normally take hours of manual research.
+
+## 🌟 Featured Applications
+
+Beyond the AI Real Estate Team, this hub showcases 6+ other AI applications:
+
+- 🎙️ **Voice-Enabled RAG Systems**
+- 🤖 **Multimodal AI Agents** 
+- 📊 **Data Analysis Agents**
+- 🔗 **GitHub MCP Agents**
+- 🧠 **Agentic RAG Systems**
+
+## 🤝 Contributing
+
+This project is 100% open source! Contributions are welcome:
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📄 License
+
+MIT License - feel free to use this code for your own projects!
+
+## 🙏 Acknowledgments
+
+Built with inspiration from [awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) by Shubham Saboo.
+
+---
+
+**Ready to find your perfect home? Start exploring with our AI agent team!** 🏡
+
+🤖 *Generated with Claude Code*
