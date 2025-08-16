@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "GenAI CRM Enhancement Dashboard - React TypeScript Frontend",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
