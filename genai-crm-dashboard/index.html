@@ -9,9 +9,54 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Critical CSS for immediate styling -->
+    <style>
+      body {
+        margin: 0;
+        background-color: #f9fafb !important;
+        color: #111827 !important;
+        font-family: 'Inter', system-ui, sans-serif;
+        min-height: 100vh;
+      }
+      #root {
+        min-height: 100vh;
+        background-color: #f9fafb;
+      }
+      .min-h-screen {
+        min-height: 100vh !important;
+      }
+      .bg-gray-50 {
+        background-color: #f9fafb !important;
+      }
+      .bg-white {
+        background-color: #ffffff !important;
+      }
+      .loading-fallback {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #f9fafb;
+        font-family: 'Inter', system-ui, sans-serif;
+        color: #111827;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loading-fallback">
+        <div style="text-align: center;">
+          <div style="width: 40px; height: 40px; border: 4px solid #e5e7eb; border-top: 4px solid #3b82f6; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 16px;"></div>
+          <div style="font-size: 18px; font-weight: 600; color: #111827;">Loading GenAI CRM Dashboard...</div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
+    <style>
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
   </body>
 </html>
