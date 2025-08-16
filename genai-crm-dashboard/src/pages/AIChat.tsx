@@ -147,13 +147,13 @@ export default function AIChat() {
   return (
     <div className="flex flex-col h-full">
       {/* Header */}
-      <div className="bg-white dark:bg-secondary-800 border-b border-border px-6 py-4">
+      <div className="bg-white dark:bg-gray-800 border-b border-border px-6 py-4">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-semibold text-secondary-900 dark:text-white">
+            <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
               AI Chat Assistant
             </h1>
-            <p className="mt-1 text-sm text-secondary-500 dark:text-secondary-400">
+            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
               Get AI-powered suggestions and assistance for customer interactions
             </p>
           </div>
@@ -193,7 +193,7 @@ export default function AIChat() {
       <div className="flex-1 flex">
         {/* SOP Browser Sidebar */}
         {showSOPBrowser && (
-          <div className="w-80 border-r border-border bg-white dark:bg-secondary-800 overflow-y-auto">
+          <div className="w-80 border-r border-border bg-white dark:bg-gray-800 overflow-y-auto">
             <div className="p-4">
               <SOPBrowser 
                 onSelectSOP={handleSOPSelect}
@@ -208,11 +208,11 @@ export default function AIChat() {
           <div className="flex-1 overflow-y-auto p-6 space-y-4">
             {messages.length === 0 ? (
               <div className="text-center py-12">
-                <CpuChipIcon className="h-12 w-12 text-secondary-400 mx-auto mb-4" />
-                <h3 className="text-lg font-medium text-secondary-900 dark:text-white mb-2">
+                <CpuChipIcon className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+                <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
                   Start a conversation with AI
                 </h3>
-                <p className="text-secondary-500 dark:text-secondary-400 max-w-md mx-auto">
+                <p className="text-gray-500 dark:text-gray-400 max-w-md mx-auto">
                   Ask questions, get suggestions for customer responses, or analyze conversation sentiment.
                   You can select a customer to get personalized assistance.
                 </p>
@@ -231,8 +231,8 @@ export default function AIChat() {
                     <div
                       className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${
                         message.role === 'user'
-                          ? 'bg-primary-600 text-white'
-                          : 'bg-secondary-200 dark:bg-secondary-700 text-secondary-600 dark:text-secondary-300'
+                          ? 'bg-blue-600 text-white'
+                          : 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300'
                       }`}
                     >
                       {message.role === 'user' ? (
@@ -250,8 +250,8 @@ export default function AIChat() {
                       <div
                         className={`rounded-lg px-4 py-3 ${
                           message.role === 'user'
-                            ? 'bg-primary-600 text-white'
-                            : 'bg-white dark:bg-secondary-800 border border-border'
+                            ? 'bg-blue-600 text-white'
+                            : 'bg-white dark:bg-gray-800 border border-border'
                         }`}
                       >
                         <p className="text-sm">{message.content}</p>
@@ -268,22 +268,22 @@ export default function AIChat() {
                       {/* Suggestions */}
                       {message.suggestions && message.suggestions.length > 0 && (
                         <div className="mt-3 space-y-2">
-                          <p className="text-xs font-medium text-secondary-500 dark:text-secondary-400">
+                          <p className="text-xs font-medium text-gray-500 dark:text-gray-400">
                             Suggested responses:
                           </p>
                           {message.suggestions.map((suggestion, idx) => (
                             <button
                               key={idx}
                               onClick={() => handleSuggestionClick(suggestion.text)}
-                              className="block w-full text-left p-3 bg-secondary-50 dark:bg-secondary-700 hover:bg-secondary-100 dark:hover:bg-secondary-600 rounded-lg text-sm transition-colors duration-200"
+                              className="block w-full text-left p-3 bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg text-sm transition-colors duration-200"
                             >
                               <div className="flex items-center justify-between">
                                 <span className="font-medium capitalize">{suggestion.type}</span>
-                                <span className="text-xs text-secondary-500">
+                                <span className="text-xs text-gray-500">
                                   {Math.round(suggestion.confidence * 100)}%
                                 </span>
                               </div>
-                              <p className="mt-1 text-secondary-700 dark:text-secondary-300">
+                              <p className="mt-1 text-gray-700 dark:text-gray-300">
                                 {suggestion.text}
                               </p>
                             </button>
@@ -300,10 +300,10 @@ export default function AIChat() {
 
           {/* SOP Suggestions */}
           {sopSuggestions.length > 0 && (
-            <div className="border-t border-secondary-200 dark:border-secondary-700 bg-secondary-50 dark:bg-secondary-900 p-4">
+            <div className="border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-4">
               <div className="flex items-center space-x-2 mb-3">
-                <DocumentTextIcon className="h-5 w-5 text-primary-600" />
-                <h4 className="text-sm font-medium text-secondary-900 dark:text-white">
+                <DocumentTextIcon className="h-5 w-5 text-blue-600" />
+                <h4 className="text-sm font-medium text-gray-900 dark:text-white">
                   Relevant SOPs
                 </h4>
               </div>
@@ -312,14 +312,14 @@ export default function AIChat() {
                   <button
                     key={sop.id}
                     onClick={() => handleSOPSelect(sop)}
-                    className="w-full text-left p-3 bg-white dark:bg-secondary-800 hover:bg-secondary-100 dark:hover:bg-secondary-700 rounded-lg border border-secondary-200 dark:border-secondary-700 transition-colors duration-200"
+                    className="w-full text-left p-3 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-700 transition-colors duration-200"
                   >
                     <div className="flex items-start justify-between">
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-secondary-900 dark:text-white truncate">
+                        <p className="text-sm font-medium text-gray-900 dark:text-white truncate">
                           {sop.title}
                         </p>
-                        <p className="text-xs text-secondary-500 dark:text-secondary-400 mt-1">
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                           {sop.spaceKey} • Updated {new Date(sop.lastModified).toLocaleDateString()}
                         </p>
                       </div>
@@ -328,7 +328,7 @@ export default function AIChat() {
                           e.stopPropagation()
                           window.open(sop.url, '_blank')
                         }}
-                        className="ml-2 text-secondary-400 hover:text-secondary-600"
+                        className="ml-2 text-gray-400 hover:text-gray-600"
                       >
                         <ArrowTopRightOnSquareIcon className="h-4 w-4" />
                       </button>
@@ -340,7 +340,7 @@ export default function AIChat() {
           )}
 
           {/* Input Area */}
-          <div className="border-t border-border bg-white dark:bg-secondary-800 p-6">
+          <div className="border-t border-border bg-white dark:bg-gray-800 p-6">
             <form onSubmit={handleSubmit} className="flex space-x-4">
               <div className="flex-1">
                 <input

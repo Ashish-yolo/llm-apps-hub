@@ -75,8 +75,8 @@ export default function SOPBrowser({ onSelectSOP, compact = false, searchQuery: 
       <div className="flex items-start justify-between">
         <div className="flex-1 min-w-0">
           <div className="flex items-center space-x-2 mb-2">
-            <DocumentTextIcon className="h-5 w-5 text-primary-600 flex-shrink-0" />
-            <h3 className={`font-medium text-secondary-900 dark:text-white truncate ${
+            <DocumentTextIcon className="h-5 w-5 text-blue-600 flex-shrink-0" />
+            <h3 className={`font-medium text-gray-900 dark:text-white truncate ${
               compact ? 'text-sm' : 'text-base'
             }`}>
               {sop.title}
@@ -84,12 +84,12 @@ export default function SOPBrowser({ onSelectSOP, compact = false, searchQuery: 
           </div>
           
           {!compact && sop.excerpt && (
-            <p className="text-sm text-secondary-600 dark:text-secondary-400 mb-2 line-clamp-2">
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-2 line-clamp-2">
               {sop.excerpt}
             </p>
           )}
           
-          <div className="flex items-center space-x-4 text-xs text-secondary-500 dark:text-secondary-400">
+          <div className="flex items-center space-x-4 text-xs text-gray-500 dark:text-gray-400">
             <div className="flex items-center space-x-1">
               <ClockIcon className="h-4 w-4" />
               <span>{formatDate(sop.lastModified)}</span>
@@ -114,7 +114,7 @@ export default function SOPBrowser({ onSelectSOP, compact = false, searchQuery: 
             e.stopPropagation()
             window.open(sop.url, '_blank')
           }}
-          className="ml-3 p-1 text-secondary-400 hover:text-secondary-600 transition-colors duration-200"
+          className="ml-3 p-1 text-gray-400 hover:text-gray-600 transition-colors duration-200"
           title="Open in Confluence"
         >
           <ArrowTopRightOnSquareIcon className="h-4 w-4" />
@@ -140,14 +140,14 @@ export default function SOPBrowser({ onSelectSOP, compact = false, searchQuery: 
       {/* Header */}
       {!compact && (
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-medium text-secondary-900 dark:text-white">
+          <h2 className="text-lg font-medium text-gray-900 dark:text-white">
             SOP Browser
           </h2>
         </div>
       )}
 
       {/* Tabs */}
-      <div className="border-b border-secondary-200 dark:border-secondary-700">
+      <div className="border-b border-gray-200 dark:border-gray-700">
         <nav className="-mb-px flex space-x-8">
           {['search', 'recent', 'browse'].map((tab) => (
             <button
@@ -155,8 +155,8 @@ export default function SOPBrowser({ onSelectSOP, compact = false, searchQuery: 
               onClick={() => setActiveTab(tab as any)}
               className={`py-2 px-1 border-b-2 font-medium text-sm capitalize transition-colors duration-200 ${
                 activeTab === tab
-                  ? 'border-primary-500 text-primary-600'
-                  : 'border-transparent text-secondary-500 hover:text-secondary-700 hover:border-secondary-300'
+                  ? 'border-blue-500 text-blue-600'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
             >
               {tab}
@@ -171,7 +171,7 @@ export default function SOPBrowser({ onSelectSOP, compact = false, searchQuery: 
           <form onSubmit={handleSearch} className="flex space-x-2">
             <div className="flex-1 relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <MagnifyingGlassIcon className="h-5 w-5 text-secondary-400" />
+                <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
               </div>
               <input
                 type="text"
@@ -202,8 +202,8 @@ export default function SOPBrowser({ onSelectSOP, compact = false, searchQuery: 
                 currentData.map(renderSOPCard)
               ) : (
                 <div className="text-center py-8">
-                  <DocumentTextIcon className="h-12 w-12 text-secondary-400 mx-auto mb-4" />
-                  <p className="text-secondary-500 dark:text-secondary-400">
+                  <DocumentTextIcon className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+                  <p className="text-gray-500 dark:text-gray-400">
                     No SOPs found for "{searchQuery}"
                   </p>
                 </div>
@@ -243,8 +243,8 @@ export default function SOPBrowser({ onSelectSOP, compact = false, searchQuery: 
                 currentData.map(renderSOPCard)
               ) : (
                 <div className="text-center py-8">
-                  <ClockIcon className="h-12 w-12 text-secondary-400 mx-auto mb-4" />
-                  <p className="text-secondary-500 dark:text-secondary-400">
+                  <ClockIcon className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+                  <p className="text-gray-500 dark:text-gray-400">
                     No recent pages found
                   </p>
                 </div>
@@ -282,8 +282,8 @@ export default function SOPBrowser({ onSelectSOP, compact = false, searchQuery: 
                 currentData.map(renderSOPCard)
               ) : (
                 <div className="text-center py-8">
-                  <DocumentTextIcon className="h-12 w-12 text-secondary-400 mx-auto mb-4" />
-                  <p className="text-secondary-500 dark:text-secondary-400">
+                  <DocumentTextIcon className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+                  <p className="text-gray-500 dark:text-gray-400">
                     No pages found in this space
                   </p>
                 </div>

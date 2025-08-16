@@ -59,7 +59,7 @@ export default function QuickActions() {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 mt-2 w-72 rounded-md shadow-lg bg-white dark:bg-secondary-800 ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+        <Menu.Items className="absolute right-0 mt-2 w-72 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
           <div className="py-1">
             {quickActions.map((action) => (
               <Menu.Item key={action.name}>
@@ -68,17 +68,17 @@ export default function QuickActions() {
                     onClick={() => handleActionClick(action.href)}
                     className={`${
                       active
-                        ? 'bg-secondary-100 dark:bg-secondary-700 text-secondary-900 dark:text-white'
-                        : 'text-secondary-700 dark:text-secondary-300'
+                        ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white'
+                        : 'text-gray-700 dark:text-gray-300'
                     } group flex items-center px-4 py-3 text-sm w-full text-left`}
                   >
                     <action.icon
-                      className="mr-3 h-5 w-5 text-secondary-400 dark:text-secondary-500 group-hover:text-secondary-500 dark:group-hover:text-secondary-400"
+                      className="mr-3 h-5 w-5 text-gray-400 dark:text-gray-500 group-hover:text-gray-500 dark:group-hover:text-gray-400"
                       aria-hidden="true"
                     />
                     <div>
                       <p className="font-medium">{action.name}</p>
-                      <p className="text-xs text-secondary-500 dark:text-secondary-400">
+                      <p className="text-xs text-gray-500 dark:text-gray-400">
                         {action.description}
                       </p>
                     </div>

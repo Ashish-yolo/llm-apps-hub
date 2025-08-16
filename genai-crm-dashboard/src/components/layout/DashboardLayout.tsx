@@ -19,10 +19,10 @@ export default function DashboardLayout() {
       {sidebarOpen && (
         <div className="fixed inset-0 flex z-40 lg:hidden">
           <div
-            className="fixed inset-0 bg-secondary-600 bg-opacity-75"
+            className="fixed inset-0 bg-gray-600 bg-opacity-75"
             onClick={() => setSidebarOpen(false)}
           />
-          <div className="relative flex-1 flex flex-col max-w-xs w-full bg-white dark:bg-secondary-800 shadow-xl">
+          <div className="relative flex-1 flex flex-col max-w-xs w-full bg-white dark:bg-gray-800 shadow-xl">
             <Sidebar onClose={() => setSidebarOpen(false)} />
           </div>
         </div>

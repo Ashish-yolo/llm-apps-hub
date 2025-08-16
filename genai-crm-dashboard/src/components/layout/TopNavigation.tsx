@@ -35,10 +35,10 @@ export default function TopNavigation({ onMenuClick }: TopNavigationProps) {
   ]
 
   return (
-    <div className="relative z-10 flex-shrink-0 flex h-16 bg-white dark:bg-secondary-800 border-b border-border">
+    <div className="relative z-10 flex-shrink-0 flex h-16 bg-white dark:bg-gray-800 border-b border-border">
       <button
         type="button"
-        className="px-4 border-r border-border text-secondary-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 lg:hidden"
+        className="px-4 border-r border-border text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 lg:hidden"
         onClick={onMenuClick}
       >
         <span className="sr-only">Open sidebar</span>
@@ -51,13 +51,13 @@ export default function TopNavigation({ onMenuClick }: TopNavigationProps) {
             <label htmlFor="search-field" className="sr-only">
               Search
             </label>
-            <div className="relative w-full text-secondary-400 focus-within:text-secondary-600">
+            <div className="relative w-full text-gray-400 focus-within:text-gray-600">
               <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none">
                 <MagnifyingGlassIcon className="h-5 w-5" aria-hidden="true" />
               </div>
               <input
                 id="search-field"
-                className="block w-full h-full pl-8 pr-3 py-2 border-transparent text-secondary-900 dark:text-secondary-100 placeholder-secondary-500 dark:placeholder-secondary-400 focus:outline-none focus:placeholder-secondary-400 focus:ring-0 focus:border-transparent bg-transparent"
+                className="block w-full h-full pl-8 pr-3 py-2 border-transparent text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:placeholder-gray-400 focus:ring-0 focus:border-transparent bg-transparent"
                 placeholder="Search customers, interactions..."
                 type="search"
                 value={searchQuery}
@@ -71,7 +71,7 @@ export default function TopNavigation({ onMenuClick }: TopNavigationProps) {
           {/* Theme Selector */}
           <Menu as="div" className="relative">
             <div>
-              <Menu.Button className="p-1 rounded-full text-secondary-400 hover:text-secondary-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+              <Menu.Button className="p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 <span className="sr-only">Change theme</span>
                 {isDark && <MoonIcon className="h-6 w-6" aria-hidden="true" />}
                 {isLight && <SunIcon className="h-6 w-6" aria-hidden="true" />}
@@ -86,16 +86,16 @@ export default function TopNavigation({ onMenuClick }: TopNavigationProps) {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-secondary-800 ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 focus:outline-none">
                 {themeOptions.map((option) => (
                   <Menu.Item key={option.value}>
                     {({ active }) => (
                       <button
                         onClick={() => setTheme(option.value)}
                         className={`${
-                          active ? 'bg-secondary-100 dark:bg-secondary-700' : ''
+                          active ? 'bg-gray-100 dark:bg-gray-700' : ''
                         } ${
-                          option.active ? 'text-primary-600' : 'text-secondary-700 dark:text-secondary-300'
+                          option.active ? 'text-blue-600' : 'text-gray-700 dark:text-gray-300'
                         } group flex items-center px-4 py-2 text-sm w-full text-left`}
                       >
                         <option.icon className="mr-3 h-5 w-5" aria-hidden="true" />
@@ -111,7 +111,7 @@ export default function TopNavigation({ onMenuClick }: TopNavigationProps) {
           {/* Notifications */}
           <button
             type="button"
-            className="ml-3 p-1 rounded-full text-secondary-400 hover:text-secondary-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+            className="ml-3 p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
           >
             <span className="sr-only">View notifications</span>
             <BellIcon className="h-6 w-6" aria-hidden="true" />
@@ -120,9 +120,9 @@ export default function TopNavigation({ onMenuClick }: TopNavigationProps) {
           {/* Profile dropdown */}
           <Menu as="div" className="ml-3 relative">
             <div>
-              <Menu.Button className="max-w-xs bg-white dark:bg-secondary-800 flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+              <Menu.Button className="max-w-xs bg-white dark:bg-gray-800 flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 <span className="sr-only">Open user menu</span>
-                <div className="h-8 w-8 rounded-full bg-primary-600 flex items-center justify-center">
+                <div className="h-8 w-8 rounded-full bg-blue-600 flex items-center justify-center">
                   <span className="text-white font-medium text-sm">
                     {user?.name?.charAt(0) || user?.email?.charAt(0) || 'U'}
                   </span>
@@ -137,12 +137,12 @@ export default function TopNavigation({ onMenuClick }: TopNavigationProps) {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-secondary-800 ring-1 ring-black ring-opacity-5 focus:outline-none">
-                <div className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700">
-                  <p className="text-sm font-medium text-secondary-900 dark:text-secondary-100">
+              <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
+                  <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
                     {user?.name || 'User'}
                   </p>
-                  <p className="text-sm text-secondary-500 dark:text-secondary-400">
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
                     {user?.email}
                   </p>
                 </div>
@@ -151,8 +151,8 @@ export default function TopNavigation({ onMenuClick }: TopNavigationProps) {
                     <a
                       href="#"
                       className={`${
-                        active ? 'bg-secondary-100 dark:bg-secondary-700' : ''
-                      } block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300`}
+                        active ? 'bg-gray-100 dark:bg-gray-700' : ''
+                      } block px-4 py-2 text-sm text-gray-700 dark:text-gray-300`}
                     >
                       Your Profile
                     </a>
@@ -163,8 +163,8 @@ export default function TopNavigation({ onMenuClick }: TopNavigationProps) {
                     <a
                       href="#"
                       className={`${
-                        active ? 'bg-secondary-100 dark:bg-secondary-700' : ''
-                      } block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300`}
+                        active ? 'bg-gray-100 dark:bg-gray-700' : ''
+                      } block px-4 py-2 text-sm text-gray-700 dark:text-gray-300`}
                     >
                       Settings
                     </a>
@@ -175,8 +175,8 @@ export default function TopNavigation({ onMenuClick }: TopNavigationProps) {
                     <button
                       onClick={handleSignOut}
                       className={`${
-                        active ? 'bg-secondary-100 dark:bg-secondary-700' : ''
-                      } block w-full text-left px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300`}
+                        active ? 'bg-gray-100 dark:bg-gray-700' : ''
+                      } block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300`}
                     >
                       Sign out
                     </button>

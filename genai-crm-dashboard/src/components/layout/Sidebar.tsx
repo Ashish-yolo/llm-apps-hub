@@ -49,20 +49,20 @@ const navigation: NavItem[] = [
 
 export default function Sidebar({ onClose }: SidebarProps) {
   return (
-    <div className="flex flex-col flex-grow border-r border-border bg-white dark:bg-secondary-800 pt-5 pb-4 overflow-y-auto">
+    <div className="flex flex-col flex-grow border-r border-border bg-white dark:bg-gray-800 pt-5 pb-4 overflow-y-auto">
       <div className="flex items-center flex-shrink-0 px-4">
         <div className="flex items-center">
-          <div className="h-8 w-8 bg-primary-600 rounded-lg flex items-center justify-center">
+          <div className="h-8 w-8 bg-blue-600 rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-sm">AI</span>
           </div>
-          <span className="ml-2 text-xl font-semibold text-secondary-900 dark:text-white">
+          <span className="ml-2 text-xl font-semibold text-gray-900 dark:text-white">
             GenAI CRM
           </span>
         </div>
         {onClose && (
           <button
             type="button"
-            className="ml-auto lg:hidden rounded-md p-2 text-secondary-400 hover:text-secondary-500 hover:bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+            className="ml-auto lg:hidden rounded-md p-2 text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
             onClick={onClose}
           >
             <span className="sr-only">Close sidebar</span>
@@ -80,8 +80,8 @@ export default function Sidebar({ onClose }: SidebarProps) {
               className={({ isActive }) =>
                 `group flex items-center px-2 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
                   isActive
-                    ? 'bg-primary-100 dark:bg-primary-900 text-primary-900 dark:text-primary-100 border-r-2 border-primary-600'
-                    : 'text-secondary-600 dark:text-secondary-300 hover:bg-secondary-50 dark:hover:bg-secondary-700 hover:text-secondary-900 dark:hover:text-white'
+                    ? 'bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-100 border-r-2 border-blue-600'
+                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white'
                 }`
               }
             >
@@ -91,7 +91,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
               />
               {item.name}
               {item.badge && (
-                <span className="ml-auto inline-block py-0.5 px-2 text-xs rounded-full bg-primary-100 text-primary-600">
+                <span className="ml-auto inline-block py-0.5 px-2 text-xs rounded-full bg-blue-100 text-blue-600">
                   {item.badge}
                 </span>
               )}
@@ -102,16 +102,16 @@ export default function Sidebar({ onClose }: SidebarProps) {
       
       <div className="flex-shrink-0 flex border-t border-border p-4">
         <div className="flex items-center">
-          <div className="h-8 w-8 rounded-full bg-secondary-200 dark:bg-secondary-600 flex items-center justify-center">
-            <span className="text-xs font-medium text-secondary-700 dark:text-secondary-300">
+          <div className="h-8 w-8 rounded-full bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
+            <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
               AI
             </span>
           </div>
           <div className="ml-3">
-            <p className="text-sm font-medium text-secondary-700 dark:text-secondary-300">
+            <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
               AI Assistant
             </p>
-            <p className="text-xs text-secondary-500 dark:text-secondary-400">
+            <p className="text-xs text-gray-500 dark:text-gray-400">
               Ready to help
             </p>
           </div>
