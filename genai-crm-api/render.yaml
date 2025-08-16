@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: genai-crm-api
+    env: node
+    plan: starter
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: RATE_LIMIT_WINDOW_MS
+        value: "900000"
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: "100"
+      - key: ALLOWED_ORIGINS
+        value: "https://your-frontend.netlify.app"
+      - key: LOG_LEVEL
+        value: "info"
+      - key: PII_DETECTION_ENABLED
+        value: "true"
+      - key: ANALYTICS_ENABLED
+        value: "true"
+      - key: CONFLUENCE_BASE_URL
+        sync: false
+      - key: CONFLUENCE_API_TOKEN
+        sync: false
+      - key: CONFLUENCE_USERNAME
+        sync: false
+      - key: PORT
+        value: "10000"
+    healthCheckPath: /health
+    autoDeploy: false
