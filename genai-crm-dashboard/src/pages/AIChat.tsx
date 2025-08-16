@@ -1,14 +1,14 @@
 import { useState, useRef, useEffect } from 'react'
 import { useMutation, useQuery } from '@tanstack/react-query'
 import {
-  PaperAirplaneIcon,
-  UserIcon,
-  CpuChipIcon,
-  XMarkIcon,
-  DocumentTextIcon,
-  BookOpenIcon,
-  ArrowTopRightOnSquareIcon,
-} from '@heroicons/react/24/outline'
+  Send,
+  User,
+  Bot,
+  X,
+  FileText,
+  BookOpen,
+  ExternalLink,
+} from 'lucide-react'
 import { api } from '@/services/api'
 import { ConversationTurn, ConfluencePage } from '@/types'
 import SOPBrowser from '@/components/sop/SOPBrowser'
@@ -175,14 +175,14 @@ export default function AIChat() {
               onClick={() => setShowSOPBrowser(!showSOPBrowser)}
               className={`btn-sm mr-2 ${showSOPBrowser ? 'btn-primary' : 'btn-outline'}`}
             >
-              <BookOpenIcon className="h-4 w-4 mr-1" />
+              <BookOpen className="h-4 w-4 mr-1" />
               SOPs
             </button>
             <button
               onClick={clearConversation}
               className="btn-outline btn-sm"
             >
-              <XMarkIcon className="h-4 w-4 mr-1" />
+              <X className="h-4 w-4 mr-1" />
               Clear
             </button>
           </div>
@@ -208,7 +208,7 @@ export default function AIChat() {
           <div className="flex-1 overflow-y-auto p-6 space-y-4">
             {messages.length === 0 ? (
               <div className="text-center py-12">
-                <CpuChipIcon className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+                <Bot className="h-12 w-12 text-gray-400 mx-auto mb-4" />
                 <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
                   Start a conversation with AI
                 </h3>
@@ -236,9 +236,9 @@ export default function AIChat() {
                       }`}
                     >
                       {message.role === 'user' ? (
-                        <UserIcon className="h-5 w-5" />
+                        <User className="h-5 w-5" />
                       ) : (
-                        <CpuChipIcon className="h-5 w-5" />
+                        <Bot className="h-5 w-5" />
                       )}
                     </div>
                     
@@ -302,7 +302,7 @@ export default function AIChat() {
           {sopSuggestions.length > 0 && (
             <div className="border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-4">
               <div className="flex items-center space-x-2 mb-3">
-                <DocumentTextIcon className="h-5 w-5 text-blue-600" />
+                <FileText className="h-5 w-5 text-blue-600" />
                 <h4 className="text-sm font-medium text-gray-900 dark:text-white">
                   Relevant SOPs
                 </h4>
@@ -330,7 +330,7 @@ export default function AIChat() {
                         }}
                         className="ml-2 text-gray-400 hover:text-gray-600"
                       >
-                        <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+                        <ExternalLink className="h-4 w-4" />
                       </button>
                     </div>
                   </button>
@@ -360,7 +360,7 @@ export default function AIChat() {
                 {sendMessageMutation.isPending ? (
                   <div className="loading-spinner mr-2" />
                 ) : (
-                  <PaperAirplaneIcon className="h-5 w-5 mr-2" />
+                  <Send className="h-5 w-5 mr-2" />
                 )}
                 Send
               </button>
