@@ -147,7 +147,7 @@ export default function AIChat() {
   return (
     <div className="flex flex-col h-full">
       {/* Header */}
-      <div className="bg-white dark:bg-gray-800 border-b border-border px-6 py-4">
+      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-6 py-4">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
@@ -193,7 +193,7 @@ export default function AIChat() {
       <div className="flex-1 flex">
         {/* SOP Browser Sidebar */}
         {showSOPBrowser && (
-          <div className="w-80 border-r border-border bg-white dark:bg-gray-800 overflow-y-auto">
+          <div className="w-80 border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 overflow-y-auto">
             <div className="p-4">
               <SOPBrowser 
                 onSelectSOP={handleSOPSelect}
@@ -251,7 +251,7 @@ export default function AIChat() {
                         className={`rounded-lg px-4 py-3 ${
                           message.role === 'user'
                             ? 'bg-blue-600 text-white'
-                            : 'bg-white dark:bg-gray-800 border border-border'
+                            : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700'
                         }`}
                       >
                         <p className="text-sm">{message.content}</p>
@@ -340,7 +340,7 @@ export default function AIChat() {
           )}
 
           {/* Input Area */}
-          <div className="border-t border-border bg-white dark:bg-gray-800 p-6">
+          <div className="border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6">
             <form onSubmit={handleSubmit} className="flex space-x-4">
               <div className="flex-1">
                 <input

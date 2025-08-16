@@ -36,7 +36,7 @@ function App() {
       <ThemeProvider>
         <Router>
           <AuthProvider>
-            <div className="min-h-screen bg-background text-foreground">
+            <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
               <Routes>
                 {/* Public Routes */}
                 <Route
@@ -86,9 +86,9 @@ function App() {
               toastOptions={{
                 duration: 4000,
                 style: {
-                  background: 'rgb(var(--background))',
-                  color: 'rgb(var(--foreground))',
-                  border: '1px solid rgb(var(--border))',
+                  background: '#ffffff',
+                  color: '#1f2937',
+                  border: '1px solid #e5e7eb',
                 },
               }}
             />
