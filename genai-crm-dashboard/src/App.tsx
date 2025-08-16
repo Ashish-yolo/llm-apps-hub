@@ -19,6 +19,7 @@ import Analytics from '@/pages/Analytics'
 import AIAssistant from '@/pages/AIAssistant'
 import Reports from '@/pages/Reports'
 import Settings from '@/pages/Settings'
+import SimpleRepositorySettings from '@/components/repository/SimpleRepositorySettings'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -73,6 +74,7 @@ function App() {
                   <Route path="ai-chat" element={<AIAssistant />} />
                   <Route path="reports" element={<Reports />} />
                   <Route path="settings" element={<Settings />} />
+                  <Route path="repositories" element={<SimpleRepositorySettings />} />
                 </Route>
 
                 {/* Catch all route */}

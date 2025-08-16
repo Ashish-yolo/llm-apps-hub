@@ -9,6 +9,7 @@ import {
   Settings,
   X,
   Home,
+  Database,
 } from 'lucide-react'
 
 interface SidebarProps {
@@ -43,6 +44,12 @@ const navigation: NavItem[] = [
     name: 'Customers',
     href: '/customers',
     icon: Users,
+  },
+  {
+    name: 'Repositories',
+    href: '/repositories',
+    icon: Database,
+    badge: 'New'
   },
   {
     name: 'SOPs',
