@@ -201,7 +201,7 @@ export default function SignIn() {
               <p className="text-white/70">
                 Don't have an account?{' '}
                 <Link
-                  to="/auth/signup"
+                  to="/signup"
                   className="text-blue-400 hover:text-blue-300 font-medium transition-colors"
                 >
                   Sign up now

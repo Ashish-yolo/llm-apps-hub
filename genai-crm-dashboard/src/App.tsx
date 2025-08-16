@@ -40,7 +40,7 @@ function App() {
               <Routes>
                 {/* Public Routes */}
                 <Route
-                  path="/auth/signin"
+                  path="/signin"
                   element={
                     <PublicRoute>
                       <SignIn />
@@ -48,7 +48,7 @@ function App() {
                   }
                 />
                 <Route
-                  path="/auth/signup"
+                  path="/signup"
                   element={
                     <PublicRoute>
                       <SignUp />
@@ -76,7 +76,7 @@ function App() {
                 </Route>
 
                 {/* Catch all route */}
-                <Route path="*" element={<Navigate to="/dashboard" replace />} />
+                <Route path="*" element={<Navigate to="/signin" replace />} />
               </Routes>
             </div>
 

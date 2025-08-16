@@ -106,7 +106,7 @@ export default function SignUp() {
           <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
             Or{' '}
             <Link
-              to="/auth/signin"
+              to="/signin"
               className="font-medium text-blue-600 hover:text-blue-500"
             >
               sign in to your existing account

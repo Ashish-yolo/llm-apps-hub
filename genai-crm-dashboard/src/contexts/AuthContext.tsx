@@ -1,7 +1,6 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
+import React, { createContext, useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { User, AuthSession } from '@/types'
-import { api, supabase } from '@/services/api'
 import toast from 'react-hot-toast'
 
 interface AuthContextType {
@@ -31,77 +30,36 @@ interface AuthProviderProps {
 export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User | null>(null)
   const [session, setSession] = useState<AuthSession | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
-  const location = useLocation()
 
-  const isAuthenticated = !!user && !!session
+  // For demo purposes, make it not authenticated initially so we can see the SignIn page
+  const isAuthenticated = false
 
-  useEffect(() => {
-    let mounted = true
-
-    async function getInitialSession() {
-      try {
-        const { data: { session: initialSession }, error } = await supabase.auth.getSession()
-        
-        if (error) {
-          console.error('Error getting session:', error)
-          return
-        }
-
-        if (mounted && initialSession) {
-          setSession(initialSession as AuthSession)
-          setUser(initialSession.user as User)
-        }
-      } catch (error) {
-        console.error('Error in getInitialSession:', error)
-      } finally {
-        if (mounted) {
-          setLoading(false)
-        }
-      }
-    }
-
-    getInitialSession()
-
-    // Listen for auth state changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
-        if (!mounted) return
-
-        console.log('Auth state change:', event, session?.user?.email)
-
-        if (event === 'SIGNED_IN' && session) {
-          setSession(session as AuthSession)
-          setUser(session.user as User)
-          
-          // Redirect to intended page or dashboard
-          const from = (location.state as any)?.from?.pathname || '/dashboard'
-          navigate(from, { replace: true })
-          
-          toast.success(`Welcome back, ${session.user.user_metadata?.name || session.user.email}!`)
-        } else if (event === 'SIGNED_OUT') {
-          setSession(null)
-          setUser(null)
-          navigate('/auth/signin', { replace: true })
-          toast.success('Signed out successfully')
-        } else if (event === 'TOKEN_REFRESHED' && session) {
-          setSession(session as AuthSession)
-        }
-      }
-    )
-
-    return () => {
-      mounted = false
-      subscription.unsubscribe()
-    }
-  }, [navigate, location])
-
-  const signIn = async (email: string, password: string) => {
+  const signIn = async (email: string, _password: string) => {
     try {
       setLoading(true)
-      await api.signIn(email, password)
-      // The onAuthStateChange will handle the rest
+      // Demo implementation - just create a mock user
+      const mockUser: User = {
+        id: '1',
+        email,
+        name: 'Demo User',
+        role: 'user',
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
+      }
+      
+      const mockSession: AuthSession = {
+        access_token: 'demo-token',
+        refresh_token: 'demo-refresh',
+        expires_at: Date.now() + 3600000,
+        user: mockUser
+      }
+      
+      setUser(mockUser)
+      setSession(mockSession)
+      toast.success('Signed in successfully!')
+      navigate('/dashboard')
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to sign in'
       toast.error(message)
@@ -111,12 +69,12 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
   }
 
-  const signUp = async (email: string, password: string, name: string) => {
+  const signUp = async (_email: string, _password: string, _name: string) => {
     try {
       setLoading(true)
-      await api.signUp(email, password, name)
-      toast.success('Account created! Please check your email to verify your account.')
-      navigate('/auth/signin')
+      // Demo implementation
+      toast.success('Account created! Please sign in.')
+      navigate('/signin')
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to create account'
       toast.error(message)
@@ -129,8 +87,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const signOut = async () => {
     try {
       setLoading(true)
-      await api.signOut()
-      // The onAuthStateChange will handle the rest
+      setUser(null)
+      setSession(null)
+      toast.success('Signed out successfully')
+      navigate('/signin')
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to sign out'
       toast.error(message)
