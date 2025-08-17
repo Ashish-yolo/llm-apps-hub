@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #f9fafb;
+            color: #111827;
+            font-family: 'Inter', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+        }
+        .success {
+            color: #059669;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .info {
+            color: #374151;
+            margin-bottom: 1rem;
+        }
+        .button {
+            background-color: #3b82f6;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success">✅ NETLIFY DEPLOYMENT WORKING!</div>
+        <div class="info">
+            <p>This test page confirms:</p>
+            <ul style="text-align: left; margin: 1rem 0;">
+                <li>✅ Netlify is serving files correctly</li>
+                <li>✅ CSS styling is working</li>
+                <li>✅ Fonts are loading</li>
+                <li>✅ Colors and layout are applied</li>
+            </ul>
+        </div>
+        <a href="/" class="button">Go to Main App</a>
+        <p style="margin-top: 1rem; font-size: 0.875rem; color: #6b7280;">
+            Access this test at: <strong>your-site-url.netlify.app/test.html</strong>
+        </p>
+    </div>
+</body>
+</html>

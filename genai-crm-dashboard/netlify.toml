@@ -1,7 +1,7 @@
 [build]
-  base = "."
+  base = "genai-crm-dashboard"
   command = "npm run build"
-  publish = "dist/"
+  publish = "genai-crm-dashboard/dist/"
 
 [build.environment]
   NODE_VERSION = "18"
